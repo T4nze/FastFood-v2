@@ -1,5 +1,8 @@
-public class Fries extends Product {
+import java.io.Serializable;
 
+public class Fries extends Product implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String size;
 
     public Fries(String name, double price, String size) {
@@ -19,6 +22,11 @@ public class Fries extends Product {
         IO.println("Name: " + name);
         IO.println("Price: " + price);
         IO.println("Size: " + size);
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + size + ")"+ " - $" + price;
     }
 
 }

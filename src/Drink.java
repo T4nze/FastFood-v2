@@ -1,5 +1,8 @@
-public class Drink extends Product {
+import java.io.Serializable;
 
+public class Drink extends Product implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String size;
 
     public Drink(String name, double price, String size) {
@@ -7,11 +10,11 @@ public class Drink extends Product {
         this.size = size;
     }
 
-    public void setSoda(String soda) {
+    public void setSize(String soda) {
         this.size = size;
     }
 
-    public String getSoda(){
+    public String getSize(){
         return size;
     }
 
@@ -19,6 +22,11 @@ public class Drink extends Product {
         IO.println("Name: " + name);
         IO.println("Price: " + price);
         IO.println("Size: " + size);
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + size + ")"+ " - $" + price;
     }
 
 }
