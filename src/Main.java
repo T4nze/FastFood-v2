@@ -9,6 +9,4 @@ void main() {
     Fries fries = new Fries("Fries", 3, "Classic");
     Fries loadedFries = new Fries("Loaded Fries", 4, "Large with Cheese");
 
-
-
 }
