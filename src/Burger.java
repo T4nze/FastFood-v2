@@ -1,5 +1,8 @@
-public class Burger extends Product {
+import java.io.Serializable;
 
+public class Burger extends Product implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String ingredients;
 
     public Burger(String name, double price, String ingredients) {
@@ -19,6 +22,11 @@ public class Burger extends Product {
         IO.println("Name: " + name);
         IO.println("Price: " + price);
         IO.println("Ingredients: " + ingredients);
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + ingredients + ")" + " - $" + price;
     }
 
 }

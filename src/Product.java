@@ -29,4 +29,8 @@ abstract class Product {
         IO.println("Price: " + price);
     }
 
+    public String toString() {
+        return "";
+    }
+
 }
