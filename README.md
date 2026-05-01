@@ -20,7 +20,7 @@ Burger, Drink, French Fries: Products with specifications.
 Database Connection: Makes a connection to SQL server that you have setup above.
 
 🚀 Run 
-Prepare Data: Set up the fastfood_data table with customerName, orderID, _order, cost, bin fields.
+Prepare Data: Set up the fastfood_data table by moving the database to your sql directory.
 
 Compile: javac *.java
 
