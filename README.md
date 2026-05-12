@@ -1,7 +1,9 @@
 🍔 Fast Food Manager
+
 Command-line program for fast food ordering using Java. Includes SQL database support for transactions and uses object serialization.
 
 📖 Introduction 
+
 Order processing is implemented using terminal. Customers are able to add one item at a time into the order, change the basket and save the order in the SQL database.
 
 Features:
