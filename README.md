@@ -29,9 +29,7 @@ Database Connection: Makes a connection to SQL server that you have setup above.
 
 Prepare Data: Set up the fastfood_data table by moving the database to your sql directory.
 
-Compile: javac *.java
-
-Execute: java Main
+Run the exe file located in FastFood-v2\out\artifacts\FastFood_v2_jar
 
 🖥️ User Interaction Example 
 
