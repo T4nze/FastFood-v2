@@ -1,13 +1,12 @@
-CREATE DATABASE IF NOT EXISTS fastfood;
+DROP DATABASE IF EXISTS fastfood;
+CREATE DATABASE fastfood;
 USE fastfood;
 
 CREATE TABLE fastfood_data (
-
     orderID DOUBLE NOT NULL,
     BIN BLOB,
     cost DOUBLE,
     customerName VARCHAR(255),
     _order MEDIUMTEXT,
     PRIMARY KEY (orderID)
-
 );

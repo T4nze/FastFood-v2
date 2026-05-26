@@ -103,8 +103,9 @@ void main() throws IOException {
             IO.println("5. Fries: $3");
             IO.println("6. Loaded Fries: $4");
             IO.println("7. Remove Item");
-            IO.println("8. Done");
-            IO.println("9. Exit");
+            IO.println("8. Check Cart");
+            IO.println("9. Done");
+            IO.println("10. Exit");
             IO.println("\nEnter a value to add to cart: ");
             String choice = br.readLine();
 
@@ -168,15 +169,56 @@ void main() throws IOException {
                     if (del > 0 && del <= cart.size()) {
                         // Subtract 1 to get the correct 0-based index
                         Object removed = cart.remove(del - 1);
-                        System.out.println("Successfully removed " + removed.toString());
+                        IO.println("Successfully removed " + removed.toString());
                     }
+
+                    else {
+                        IO.println("No item was removed!");
+                    }
+
                     break;
 
-                case "8":
+                    case "8":
+                        IO.println("\n---------CART---------");
+
+                        double tempTotal = 0;
+
+                        for (int i = 0; i < cart.size(); i++) {
+                            Object item = cart.get(i);
+                            int displayIndex = i + 1;
+
+                            if (item instanceof Burger) {
+                                Burger b = (Burger) item;
+                                IO.println(displayIndex + " - " + b.getName() + " $" + b.getPrice());
+                                tempTotal += b.getPrice();
+                            }
+
+                            if (item instanceof Drink) {
+                                Drink s = (Drink) item;
+                                IO.println(displayIndex + " - " + s.getName() + " $" + s.getPrice());
+                                tempTotal += s.getPrice();
+                            }
+
+                            if (item instanceof Fries) {
+                                Fries f = (Fries) item;
+                                IO.println(displayIndex + " - " + f.getName() + " $" + f.getPrice());
+                                tempTotal += f.getPrice();
+                            }
+
+                        }
+
+                        IO.println("\nTotal Cost: " + tempTotal);
+
+                        IO.println("\n\nEnter anything to continue: ");
+                        String tempContinue = br.readLine();
+                        tempTotal = 0;
+                        break;
+
+                    case "9":
                     bit = false;
                     break;
 
-                case "9":
+                case "10":
                     bit2 = false;
                     bit = false;
                     wantToExit = true;
