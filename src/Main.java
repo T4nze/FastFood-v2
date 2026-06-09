@@ -211,8 +211,16 @@ void main() throws IOException {
 
                         IO.println("\n\nEnter anything to continue: ");
                         String tempContinue = br.readLine();
-                        tempTotal = 0;
-                        break;
+
+                        if(tempContinue.isEmpty()) {
+                            tempTotal = 0;
+                            break;
+                        }
+
+                        else {
+                            tempTotal = 0;
+                            break;
+                        }
 
                     case "9":
                     bit = false;
@@ -231,7 +239,7 @@ void main() throws IOException {
 
         }
 
-        if (!wantToExit) {
+        if (!wantToExit && cart.size() != 0) {
 
             for (Object item : cart) {
                 if (item instanceof Burger) totalCost += ((Burger) item).getPrice();
@@ -246,6 +254,11 @@ void main() throws IOException {
             totalCost = 0;
             cart.clear();
 
+        }
+
+        else {
+            IO.println("\nThere are no items in the list!\n");
+            bit = true;
         }
 
     }
